@@ -1,8 +1,8 @@
-const { videoToken } = require('./tokens');
-const config = require('./config');
+const { videoToken } = require("../utils/videoTokens");
+const config = require("../utils/videoConfig");
 
 const sendTokenResponse = (token, res) => {
-  res.set('Content-Type', 'application/json');
+  res.set("Content-Type", "application/json");
   res.send(
     JSON.stringify({
       token: token.toJwt()
