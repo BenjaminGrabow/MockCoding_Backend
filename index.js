@@ -3,13 +3,13 @@ const helmet = require('helmet');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 
-const userRouter = require('./src/resources/users/user-router');
-const appointmentRouter = require('./src/resources/appointments/appointments-router');
-const paymentRouter = require('./src/resources/payments/payment-router');
-const feedbackRouter = require('./src/resources/feedback/feedback-router');
-const videoRouter = require('./src/resources/video/video-router');
-const chatRouter = require('./src/resources/chat/chat-router');
-const editorRouter = require('./src/resources/editor/editor-router');
+const userRouter = require('./router/user-router');
+const interviewRouter = require('./router/interview-router');
+const paymentRouter = require('./router/payment-router');
+const feedbackRouter = require('./router/feedback-router');
+const videoRouter = require('./router/video-router');
+const chatRouter = require('./router/chat-router');
+const editorRouter = require('./router/editor-router');
 
 const server = express();
 
@@ -26,7 +26,7 @@ server.get('/', (req, res) => {
 });
 
 server.use('/user', userRouter);
-server.use('/appointment', appointmentRouter);
+server.use('/interview', interviewRouter);
 server.use('/payment', paymentRouter);
 server.use('/feedback', feedbackRouter);
 server.use('/video', videoRouter);
